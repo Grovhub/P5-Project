@@ -47,14 +47,17 @@ public class Arrow : MonoBehaviour
 
         ArrowHitSource = gameObject.AddComponent<AudioSource>();
         ArrowHitSource.playOnAwake = false;
+        ArrowHitSource.volume = 0.3f;
         ArrowHitSource.clip = SoundClips[R];
 
         FleshHitSource = gameObject.AddComponent<AudioSource>();
         FleshHitSource.playOnAwake = false;
+        FleshHitSource.volume = 0.15f;
         FleshHitSource.clip = SoundClips[3];
 
         ShieldHitSource = gameObject.AddComponent<AudioSource>();
         ShieldHitSource.playOnAwake = false;
+        ShieldHitSource.volume = 0.4f;
         ShieldHitSource.clip = SoundClips[4];
 
          GameObject[] startPositions= GameObject.FindGameObjectsWithTag("startPosition");
