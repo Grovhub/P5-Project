@@ -32,9 +32,9 @@ public class WaveManager : MonoBehaviour
     int waitTime;
 
     int wavenumber=0; // husk at første wave er nummer 0
-    public int[] blockamount = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    public int[] missamount = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    public float[] WaveFlow= { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public int[] blockamount = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    public int[] missamount = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public float[] WaveFlow= { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     public AudioClip[] SoundClips;
 
     void Awake()
@@ -151,26 +151,53 @@ public class WaveManager : MonoBehaviour
 
     void Flow()
     {
-        if (currentBlockCombo >= 1)
-        {
-            if (CurrentFlow > flowMin)
+        if (!Lowerflow){
+            if (currentBlockCombo >= 2)
             {
-                CurrentFlow -= 0.4f*Time.deltaTime;
-                currentBlockCombo = 0;
-                currentMissCombo=0;
+                    if (CurrentFlow > flowMin)
+                         {
+                            CurrentFlow -= CurrentFlow/2*Time.deltaTime;
+                            currentBlockCombo = 0;
+                            currentMissCombo=0;
               
+                         }
             }
-        }
-        if (currentMissCombo >= 1)
-        {
-            if (CurrentFlow < flowMax)
+            if (currentMissCombo >= 1)
             {
+                    if (CurrentFlow < flowMax)
+                    {
 
-            CurrentFlow += .2f*Time.deltaTime;
-            currentMissCombo=0;
-             currentBlockCombo = 0;
+                            CurrentFlow += 1f*Time.deltaTime;
+                            currentMissCombo=0;
+                            currentBlockCombo = 0;
+                    }
+
             }
+        }else if(Lowerflow){
+            if (currentBlockCombo >= 2)
+            {
+                    if (CurrentFlow > flowMin)
+                         {
+                            CurrentFlow -= CurrentFlow*Time.deltaTime;
+                            currentBlockCombo = 0;
+                            currentMissCombo=0;
+              
+                         }
+            }
+            if (currentMissCombo >= 1)
+            {
+                    if (CurrentFlow < flowMax)
+                    {
+
+                            CurrentFlow += 1f*Time.deltaTime;
+                            currentMissCombo=0;
+                            currentBlockCombo = 0;
+                    }
+
+            }
+    
         }
+    
     }
 
     IEnumerator Waves()
@@ -182,9 +209,9 @@ public class WaveManager : MonoBehaviour
         }
 
 
+     
         Debug.Log("Send out wave " + wavenumber + " based on flow of " + CurrentFlow);
-        if (Lowerflow && wavenumber<maxWaves)
-        {
+      
             
             
            /* for (int i = 0; i < 10; i++)
@@ -203,33 +230,8 @@ public class WaveManager : MonoBehaviour
                     spawnProjectile(i, "mid");
                 }
             }*/
-            if(wavenumber == 0){
-                    if (currentBlockCombo >= 1)
-        {
-            if (CurrentFlow > flowMin)
-            {
-                CurrentFlow -= 5f*Time.deltaTime;
-                currentBlockCombo = 0;
-                currentMissCombo=0;
-              
-            }
-        }
-        if (currentMissCombo >= 1)
-        {
-            if (CurrentFlow < flowMax)
-            {
-
-            CurrentFlow += 10f*Time.deltaTime;
-            currentMissCombo=0;
-             currentBlockCombo = 0;
-            }
-        }
-            }
-            buildWave(waveTextures[wavenumber]);
-            WaveFlow[wavenumber] = CurrentFlow;
-            wavenumber++;
-        } 
-        else if (wavenumber < maxWaves && !Lowerflow)
+    
+        if (wavenumber < maxWaves)
         {
 
            buildWave(waveTextures[wavenumber]);
@@ -244,7 +246,7 @@ public class WaveManager : MonoBehaviour
         }
 
        
-        yield return new WaitForSeconds(CurrentFlow*10);
+        yield return new WaitForSeconds(CurrentFlow*5);
         StartCoroutine(Waves());
            
 
