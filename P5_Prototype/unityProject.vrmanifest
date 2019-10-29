@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.p5_prototype.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "D:\\P5-Prototype-master\\P5-Prototype-master\\P5-Prototype\\P5_Prototype\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "P5_Prototype [Testing]"
+        }
+      }
+    }
+  ]
+}
