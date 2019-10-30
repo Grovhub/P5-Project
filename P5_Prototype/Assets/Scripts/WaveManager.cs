@@ -12,6 +12,8 @@ public class WaveManager : MonoBehaviour
 
     public float waitTimeBeforeStart;
     public float waitTimeBeforeEnd;
+    public GameObject StartPositions;
+    public GameObject TargetPositions;
     public GameObject EndCanvas;
     public GameObject ProjectileDad;
     public GameObject Arrow;
@@ -66,81 +68,74 @@ public class WaveManager : MonoBehaviour
     {
         var weirdPixels = 0;
         var coloredPixels = 0;
-        float x = 0;
+      
         for (int i = 0; i < wavePic.width; i++)
         {
-            x=i;
-            
+ 
                 Color pixel = wavePic.GetPixel(i, 1);
                 Color pixelY = wavePic.GetPixel(i, 0);
-                string target="";
-                string starting=""; 
-
-
-                if (pixel == Color.red)
+                GameObject startPos = null;
+                GameObject TargetPos = null;
+               
+            if (pixel == Color.red)
                 {
-                    starting="top";
+                   // starting="top";
+                    startPos = StartPositions.transform.GetChild(1).gameObject;
                     coloredPixels++;
                 }
 
-                else if (pixel == Color.green)
+            else if (pixel == Color.green)
                 {
-                    starting= "mid";
+                   // starting= "mid";
+                    startPos = StartPositions.transform.GetChild(0).gameObject;
+                    coloredPixels++;
+                }
+            else if (pixel == Color.blue)
+                {
+                   // starting= "bot";
+                    startPos = StartPositions.transform.GetChild(2).gameObject;
                     coloredPixels++;
                 }
 
-
-                else if (pixel == Color.blue)
-                {
-                    starting= "bot";
-                    coloredPixels++;
-                }
-                if (pixelY == Color.red)
+            if (pixelY == Color.red)
                 {
                     
-                    target="right";
+                    //target="right";
+                    TargetPos = TargetPositions.transform.GetChild(1).gameObject;
                     coloredPixels++;
                 }
 
-                else if (pixelY == Color.green)
+            else if (pixelY == Color.green)
                 {
-                    target= "center";
+                // target= "center";
+                    TargetPos = TargetPositions.transform.GetChild(0).gameObject;
                     coloredPixels++;
                 }
 
 
-                else if (pixelY == Color.blue)
+            else if (pixelY == Color.blue)
                 {
-                    target= "left";
+                    //target= "left";
+                    TargetPos = TargetPositions.transform.GetChild(2).gameObject;
                     coloredPixels++;
                 }
-
-
-                else
+            else
                 {
                     weirdPixels++;
                 }
-            spawnProjectile(starting, target, x);
+        spawnProjectile(startPos, TargetPos, i);
         }
         //Debug.Log(string.Format("weird pixels {0}, colored pixels {1}", weirdPixels, coloredPixels));
 
     }
-    void spawnProjectile(string start, string target, float x)
+    void spawnProjectile(GameObject start, GameObject target, float x)
     {
         GameObject pro = null;
-        
-        Flow();
- 
-     
-           
-                pro = Instantiate(Arrow, transform.position, transform.rotation);
-                pro.GetComponent<Arrow>().setEnum(target);
-                pro.GetComponent<Arrow>().setEnum(start);
-                pro.GetComponent<Arrow>().waitTime = x * CurrentFlow;
-                pro.GetComponent<Arrow>().WaveNumber = wavenumber;
-             
-         
-     
+        pro = Instantiate(Arrow, transform.position, transform.rotation);
+        pro.GetComponent<Arrow>().target = target;
+        pro.GetComponent<Arrow>().startpos = start;
+        pro.GetComponent<Arrow>().waitTime = x * CurrentFlow;
+        pro.GetComponent<Arrow>().WaveNumber = wavenumber;
         pro.transform.SetParent(ProjectileDad.transform);
     }
 

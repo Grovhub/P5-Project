@@ -11,22 +11,22 @@ public class Arrow : MonoBehaviour
     public GameObject startpos;
     public GameObject  Peak; 
     public GameObject target;
-    public Transform box;
+  //  public Transform box;
     public float speed = 0.4f;
     bool go = false;    
     float timeToReachTarget;
     public float t;
-    public Renderer rend;
+   // public Renderer rend;
 
    
     
-    enum ProjectileType { none, top, mid, bot };
-    ProjectileType pt;
-    enum ProjectileTarget { none, left, center, right };
-    ProjectileTarget pTarget;
+   // enum ProjectileType { none, top, mid, bot };
+    //ProjectileType pt;
+    //enum ProjectileTarget { none, left, center, right };
+    //ProjectileTarget pTarget;
 
-    public bool randomStartpos;
-    public float LaunchAngle = 60f;
+    //public bool randomStartpos;
+    //public float LaunchAngle = 60f;
     Rigidbody rigid;
 
     public AudioClip[] SoundClips;
@@ -40,29 +40,14 @@ public class Arrow : MonoBehaviour
     void Start()
     {
 
-        SoundClips = WaveManager.instance.SoundClips;
         
-        int R = Random.Range(0, 3);
-
-
-        ArrowHitSource = gameObject.AddComponent<AudioSource>();
-        ArrowHitSource.playOnAwake = false;
-        ArrowHitSource.volume = 0.3f;
-        ArrowHitSource.clip = SoundClips[R];
-
-        FleshHitSource = gameObject.AddComponent<AudioSource>();
-        FleshHitSource.playOnAwake = false;
-        FleshHitSource.volume = 0.15f;
-        FleshHitSource.clip = SoundClips[3];
-
-        ShieldHitSource = gameObject.AddComponent<AudioSource>();
-        ShieldHitSource.playOnAwake = false;
-        ShieldHitSource.volume = 0.4f;
-        ShieldHitSource.clip = SoundClips[4];
-
+        SetupSound();
+        
+        
+/* 
          GameObject[] startPositions= GameObject.FindGameObjectsWithTag("startPosition");
 
-        if (pt == ProjectileType.top)
+       if (pt == ProjectileType.top)
         {
             target = GameObject.FindGameObjectWithTag("PTop");
         }
@@ -96,11 +81,11 @@ public class Arrow : MonoBehaviour
         else {
             Debug.Log("problems with findings starting posistions!");
         }
-        //startpos = GetStartPos();
+        //startpos = GetStartPos();*/
         timeToReachTarget = WaveManager.instance.timeToReachTarget;
         transform.position = startpos.transform.position;
         Peak = startpos.transform.GetChild(0).gameObject;
-        GameObject.FindGameObjectWithTag("Peak");
+
         rigid = GetComponent<Rigidbody>();
         // transform.rotation = Quaternion.LookRotation(rigid.velocity) * transform.rotation;
         //transform.rotation = Quaternion.LookRotation(transform.position);
@@ -152,7 +137,7 @@ public class Arrow : MonoBehaviour
         //m.enabled = true;
     }
 
-    public void setEnum(string enumSet)
+    /*public void setEnum(string enumSet)
     {
         if (enumSet == "top"){
             pt = ProjectileType.top;
@@ -176,7 +161,7 @@ public class Arrow : MonoBehaviour
             pt = ProjectileType.none;
         }
     }
-
+    */
     void Launch()
     {
 
@@ -193,7 +178,7 @@ public class Arrow : MonoBehaviour
         // transform.rotation = Quaternion.LookRotation( ops );
     }
 
-    GameObject GetStartPos()
+   /* GameObject GetStartPos()
     {
         if (randomStartpos)
         {
@@ -231,6 +216,28 @@ public class Arrow : MonoBehaviour
                 return null;
             }
         }
+    }*/
+
+    void SetupSound()
+    {
+        SoundClips = WaveManager.instance.SoundClips;
+        int R = Random.Range(0, 3);
+
+
+        ArrowHitSource = gameObject.AddComponent<AudioSource>();
+        ArrowHitSource.playOnAwake = false;
+        ArrowHitSource.volume = 0.3f;
+        ArrowHitSource.clip = SoundClips[R];
+
+        FleshHitSource = gameObject.AddComponent<AudioSource>();
+        FleshHitSource.playOnAwake = false;
+        FleshHitSource.volume = 0.15f;
+        FleshHitSource.clip = SoundClips[3];
+
+        ShieldHitSource = gameObject.AddComponent<AudioSource>();
+        ShieldHitSource.playOnAwake = false;
+        ShieldHitSource.volume = 0.4f;
+        ShieldHitSource.clip = SoundClips[4];
     }
 
     private void OnCollisionEnter(Collision collision)

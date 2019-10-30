@@ -147,8 +147,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.75, z: 49.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1967553651}
   - {fileID: 1764728026}
+  - {fileID: 1967553651}
   - {fileID: 1727837237}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -5347,6 +5347,8 @@ MonoBehaviour:
   timeToReachTarget: 7
   waitTimeBeforeStart: 0
   waitTimeBeforeEnd: 10
+  StartPositions: {fileID: 152423409}
+  TargetPositions: {fileID: 353839734}
   EndCanvas: {fileID: 175351435}
   ProjectileDad: {fileID: 1927411706}
   Arrow: {fileID: 6262081200205992454, guid: 0d2485759c791d94db6893aae9547509, type: 3}
@@ -5394,8 +5396,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 5efe0730c10974b4e82373eca65fff39, type: 3}
   - {fileID: 2800000, guid: f838cc14b53b8604f8a753e3fca346ae, type: 3}
   flowMax: 5
-  CurrentFlow: 1
-  flowMin: 0.2
+  CurrentFlow: 0.8
+  flowMin: 0.3
   currentBlockCombo: 0
   currentMissCombo: 0
   blockamount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
@@ -21185,7 +21187,7 @@ Transform:
   m_Children:
   - {fileID: 905751937}
   m_Father: {fileID: 152423410}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 35.729, y: 0, z: 0}
 --- !u!23 &1764728027
 MeshRenderer:
@@ -21309,7 +21311,7 @@ Transform:
   m_Children:
   - {fileID: 330912293}
   m_Father: {fileID: 152423410}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 22.085001, y: -39.466003, z: -17.2}
 --- !u!23 &1967553652
 MeshRenderer:
@@ -21631,7 +21633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2061032999
 Transform:
   m_ObjectHideFlags: 0
@@ -26559,6 +26561,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thunder
       objectReference: {fileID: 0}
+    - target: {fileID: 4514083539612891828, guid: 705c8f249c250d14dab441f0c9562d8b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4514083539612891833, guid: 705c8f249c250d14dab441f0c9562d8b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26572,7 +26579,7 @@ PrefabInstance:
     - target: {fileID: 4514083539612891833, guid: 705c8f249c250d14dab441f0c9562d8b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 89
+      value: -35
       objectReference: {fileID: 0}
     - target: {fileID: 4514083539612891833, guid: 705c8f249c250d14dab441f0c9562d8b,
         type: 3}
@@ -26624,6 +26631,11 @@ PrefabInstance:
       propertyPath: ShapeModule.m_Scale.x
       value: 787.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4514083539612891831, guid: 705c8f249c250d14dab441f0c9562d8b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 67e7208c7b6e35847bfc0665a02c4ea1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 705c8f249c250d14dab441f0c9562d8b, type: 3}
 --- !u!4 &3033561057740819198 stripped
