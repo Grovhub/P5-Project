@@ -5353,26 +5353,46 @@ MonoBehaviour:
   Spear: {fileID: 8188168175303830843, guid: 0ed29eb26cbcff744b3eb1b1ae9ec3f5, type: 3}
   Lowerflow: 1
   waveTextures:
-  - {fileID: 2800000, guid: b12f1dccf69588f4e8494ddfefa0dfe7, type: 3}
-  - {fileID: 2800000, guid: 23c8cadab8802ce428c6d47ddeb79e9a, type: 3}
-  - {fileID: 2800000, guid: ee7771883d05b0544b68b79c2d6cf174, type: 3}
-  - {fileID: 2800000, guid: aed07d2b87a36484281cf9e14b547190, type: 3}
-  - {fileID: 2800000, guid: df4d3a3695d105546a1cacaa7114c145, type: 3}
-  - {fileID: 2800000, guid: b12f1dccf69588f4e8494ddfefa0dfe7, type: 3}
-  - {fileID: 2800000, guid: 23c8cadab8802ce428c6d47ddeb79e9a, type: 3}
-  - {fileID: 2800000, guid: ee7771883d05b0544b68b79c2d6cf174, type: 3}
-  - {fileID: 2800000, guid: aed07d2b87a36484281cf9e14b547190, type: 3}
-  - {fileID: 2800000, guid: df4d3a3695d105546a1cacaa7114c145, type: 3}
-  - {fileID: 2800000, guid: b12f1dccf69588f4e8494ddfefa0dfe7, type: 3}
-  - {fileID: 2800000, guid: 23c8cadab8802ce428c6d47ddeb79e9a, type: 3}
-  - {fileID: 2800000, guid: ee7771883d05b0544b68b79c2d6cf174, type: 3}
-  - {fileID: 2800000, guid: aed07d2b87a36484281cf9e14b547190, type: 3}
-  - {fileID: 2800000, guid: df4d3a3695d105546a1cacaa7114c145, type: 3}
-  - {fileID: 2800000, guid: b12f1dccf69588f4e8494ddfefa0dfe7, type: 3}
-  - {fileID: 2800000, guid: 23c8cadab8802ce428c6d47ddeb79e9a, type: 3}
-  - {fileID: 2800000, guid: ee7771883d05b0544b68b79c2d6cf174, type: 3}
-  - {fileID: 2800000, guid: aed07d2b87a36484281cf9e14b547190, type: 3}
-  - {fileID: 2800000, guid: df4d3a3695d105546a1cacaa7114c145, type: 3}
+  - {fileID: 2800000, guid: d5c4b12b2fd18c04b833671aef999faf, type: 3}
+  - {fileID: 2800000, guid: 9d2973131e7c3f34d8134e6bd5f527d9, type: 3}
+  - {fileID: 2800000, guid: ebee31d21ea43e94085636a58be97778, type: 3}
+  - {fileID: 2800000, guid: 5d65c7165497ba7489c012c8023ff713, type: 3}
+  - {fileID: 2800000, guid: 275bb0e1c40ccfb44bebbf9b52b22b79, type: 3}
+  - {fileID: 2800000, guid: dcf61e155eebc634299ec3aca794a31d, type: 3}
+  - {fileID: 2800000, guid: e00b603e99e903e47a66fa98e0b30a1d, type: 3}
+  - {fileID: 2800000, guid: 5e9b449e7e8166941ae9cc2bcf89206b, type: 3}
+  - {fileID: 2800000, guid: 5efe0730c10974b4e82373eca65fff39, type: 3}
+  - {fileID: 2800000, guid: f838cc14b53b8604f8a753e3fca346ae, type: 3}
+  - {fileID: 2800000, guid: d5c4b12b2fd18c04b833671aef999faf, type: 3}
+  - {fileID: 2800000, guid: 9d2973131e7c3f34d8134e6bd5f527d9, type: 3}
+  - {fileID: 2800000, guid: ebee31d21ea43e94085636a58be97778, type: 3}
+  - {fileID: 2800000, guid: 5d65c7165497ba7489c012c8023ff713, type: 3}
+  - {fileID: 2800000, guid: 275bb0e1c40ccfb44bebbf9b52b22b79, type: 3}
+  - {fileID: 2800000, guid: dcf61e155eebc634299ec3aca794a31d, type: 3}
+  - {fileID: 2800000, guid: e00b603e99e903e47a66fa98e0b30a1d, type: 3}
+  - {fileID: 2800000, guid: 5e9b449e7e8166941ae9cc2bcf89206b, type: 3}
+  - {fileID: 2800000, guid: 5efe0730c10974b4e82373eca65fff39, type: 3}
+  - {fileID: 2800000, guid: f838cc14b53b8604f8a753e3fca346ae, type: 3}
+  - {fileID: 2800000, guid: d5c4b12b2fd18c04b833671aef999faf, type: 3}
+  - {fileID: 2800000, guid: 9d2973131e7c3f34d8134e6bd5f527d9, type: 3}
+  - {fileID: 2800000, guid: ebee31d21ea43e94085636a58be97778, type: 3}
+  - {fileID: 2800000, guid: 5d65c7165497ba7489c012c8023ff713, type: 3}
+  - {fileID: 2800000, guid: 275bb0e1c40ccfb44bebbf9b52b22b79, type: 3}
+  - {fileID: 2800000, guid: dcf61e155eebc634299ec3aca794a31d, type: 3}
+  - {fileID: 2800000, guid: e00b603e99e903e47a66fa98e0b30a1d, type: 3}
+  - {fileID: 2800000, guid: 5e9b449e7e8166941ae9cc2bcf89206b, type: 3}
+  - {fileID: 2800000, guid: 5efe0730c10974b4e82373eca65fff39, type: 3}
+  - {fileID: 2800000, guid: f838cc14b53b8604f8a753e3fca346ae, type: 3}
+  - {fileID: 2800000, guid: d5c4b12b2fd18c04b833671aef999faf, type: 3}
+  - {fileID: 2800000, guid: 9d2973131e7c3f34d8134e6bd5f527d9, type: 3}
+  - {fileID: 2800000, guid: ebee31d21ea43e94085636a58be97778, type: 3}
+  - {fileID: 2800000, guid: 5d65c7165497ba7489c012c8023ff713, type: 3}
+  - {fileID: 2800000, guid: 275bb0e1c40ccfb44bebbf9b52b22b79, type: 3}
+  - {fileID: 2800000, guid: dcf61e155eebc634299ec3aca794a31d, type: 3}
+  - {fileID: 2800000, guid: e00b603e99e903e47a66fa98e0b30a1d, type: 3}
+  - {fileID: 2800000, guid: 5e9b449e7e8166941ae9cc2bcf89206b, type: 3}
+  - {fileID: 2800000, guid: 5efe0730c10974b4e82373eca65fff39, type: 3}
+  - {fileID: 2800000, guid: f838cc14b53b8604f8a753e3fca346ae, type: 3}
   flowMax: 5
   CurrentFlow: 1
   flowMin: 0.2
