@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.p5_prototype.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\p5\\P5-Project\\P5_Prototype\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "D:\\MTA19533\\P5-Project\\P5_Prototype\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "P5_Prototype [Testing]"
