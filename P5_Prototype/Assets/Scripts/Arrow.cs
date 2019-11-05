@@ -249,6 +249,7 @@ public class Arrow : MonoBehaviour
             go = false;
             
             WaveManager.instance.blockamount[WaveNumber] ++;
+     
             WaveManager.instance.currentBlockCombo ++;
             WaveManager.instance.currentMissCombo = 0;
             transform.SetParent(collision.gameObject.transform);

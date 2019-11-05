@@ -13,9 +13,12 @@ public class Score : MonoBehaviour
 
     void Start()
     {
+
         BarImage = gameObject.transform.GetChild(0).GetComponent<Image>(); 
         BlockText = gameObject.transform.GetChild(1).GetComponent<Text>();
         MissText = gameObject.transform.GetChild(2).GetComponent<Text>(); 
+
+        BarImage.fillAmount = 0;
     }
 
     private void Update()
@@ -33,38 +36,19 @@ public class Score : MonoBehaviour
             missSum += WaveManager.instance.missamount[i];
             blockSum += WaveManager.instance.blockamount[i];
         }
-      
+     /*   for (int i = 0; i < WaveManager.instance.blockamount.Length; i++)
+        {
 
+            blockSum += WaveManager.instance.blockamount[i];
+        }
+      
+*/ 
         MissText.text= missSum.ToString();
-        BlockText.text = missSum.ToString();
+        BlockText.text= blockSum.ToString();
     }
 
     void UpdateProgress()
     {
-        BarImage.fillAmount = WaveManager.instance.wavenumber * 2.5f;
-    }
-}
-=======
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Score : MonoBehaviour
-{
-    public Gameobject Canvas;
-    private image progressbar;
-    private text Score;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        BarImage.fillAmount = WaveManager.instance.wavenumber * 0.025f;
     }
 }
