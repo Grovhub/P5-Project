@@ -16,6 +16,7 @@ public class Arrow : MonoBehaviour
     bool go = false;    
     float timeToReachTarget;
     public float t;
+    public bool tutorialarrow=false;
    // public Renderer rend;
 
    
@@ -223,7 +224,7 @@ public class Arrow : MonoBehaviour
         SoundClips = WaveManager.instance.SoundClips;
         int R = Random.Range(0, 3);
 
-
+        
         ArrowHitSource = gameObject.AddComponent<AudioSource>();
         ArrowHitSource.playOnAwake = false;
         ArrowHitSource.volume = 0.3f;

@@ -18,6 +18,7 @@ public class WaveManager : MonoBehaviour
     public GameObject ProjectileDad;
     public GameObject Arrow;
     public GameObject Spear;
+    public GameObject Viking;
     public bool Lowerflow;
     public Texture2D[] waveTextures;
 
@@ -137,6 +138,8 @@ public class WaveManager : MonoBehaviour
         pro.GetComponent<Arrow>().waitTime = x * CurrentFlow;
         pro.GetComponent<Arrow>().WaveNumber = wavenumber;
         pro.transform.SetParent(ProjectileDad.transform);
+
+    
     }
 
     void gameEnd()
@@ -200,7 +203,17 @@ public class WaveManager : MonoBehaviour
 
         if (wavenumber == 0)
         {
-            yield return new WaitForSeconds(waitTimeBeforeStart);
+
+            yield return new WaitForSeconds(3);
+            AudioSource as87 = Viking.GetComponent<AudioSource>();
+            as87.Play();
+            yield return new WaitForSeconds(1);
+            spawnProjectile(StartPositions.transform.GetChild(2).gameObject, Viking, 1);
+            spawnProjectile(StartPositions.transform.GetChild(0).gameObject, Viking, 2);
+            spawnProjectile(StartPositions.transform.GetChild(1).gameObject, Viking, 3);
+            yield return new WaitForSeconds(10);
+            missamount[wavenumber]=0;
+            Destroy(Viking.gameObject, 3);
         }
 
 

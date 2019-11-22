@@ -1,0 +1,27 @@
+5 mr
+2 vr
+
+
+p1: vr(f) mr
+p2: vr mr
+p3: vr mr
+p4: vr mr
+p5: vr mr
+p6: vr mr
+p7: vr mr
+p8: vr mr
+p9: vr mr
+p10: vr(f) mr
+p11: vr mr
+p12: vr mr
+p13: vr mr
+p14: vr mr
+p15: vr mr
+p16: mr vr
+p17: mr vr
+p18: mr vr
+p19: mr vr
+p20: mr vr
+p21: mr vr
+
+ 
