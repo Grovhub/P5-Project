@@ -2,7 +2,7 @@
 2 vr
 
 
-p1: vr(f) mr
+p1: vr mr
 p2: vr mr
 p3: vr mr
 p4: vr mr
@@ -11,7 +11,7 @@ p6: vr mr
 p7: vr mr
 p8: vr mr
 p9: vr mr
-p10: vr(f) mr
+p10(31): vr mr
 p11: vr mr
 p12: vr mr
 p13: vr mr
@@ -23,5 +23,17 @@ p18: mr vr
 p19: mr vr
 p20: mr vr
 p21: mr vr
+p22 mr vr
+p23 mr vr
+p24 mr vr
+p25 mr vr
+p26 mr vr
+p27 mr vr
+p28 mr vr
+p29 mr vr
+p30 mr vr
+
+
+
 
  
